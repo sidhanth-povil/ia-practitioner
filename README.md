@@ -282,7 +282,7 @@ Contributions are welcome — but keep the skill tight. The core file loads on e
 
 Built and maintained by **[designsuite.ai](https://designsuite.ai)** — UI/UX studio specialising in WordPress and healthcare web design.
 
-Our sister brand **[medicalsuite.ai](https://medicalsuite.ai)** focuses on healthcare web design in the UAE and globally.
+Our sister brand **[medicalsuite.ai](https://medicalsuite.ai)** focuses on healthcare web design globally.
 
 We build Claude skills as internal tools and release them publicly when we think they're useful to other practitioners.
 
