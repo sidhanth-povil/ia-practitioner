@@ -25,6 +25,8 @@ Apply practitioner IA frameworks to any website, app, or content project — dir
 
 Install once and Claude becomes a working IA consultant. It applies a rigorous framework built from seven practitioner texts — covering the full lifecycle from user research through navigation design, search systems, taxonomy, testing, and client deliverables.
 
+<br>
+
 | Capability | What Claude does |
 |---|---|
 | **Nav audits** | Audits any site's navigation against IA principles — flags org-chart drift, label failures, pattern mismatches |
@@ -41,6 +43,10 @@ Install once and Claude becomes a working IA consultant. It applies a rigorous f
 
 ## Install
 
+<br>
+
+### Method 1 — Claude Skills (global, recommended)
+
 ```
 1. Download ia-practitioner.skill from Releases
 2. Open Claude.ai → Settings → Skills → Install from file
@@ -49,11 +55,25 @@ Install once and Claude becomes a working IA consultant. It applies a rigorous f
 
 Works immediately across all your Claude conversations. No configuration needed.
 
+<br>
+
+### Method 2 — Claude Projects (per-project)
+
+```
+1. Create a new Project in Claude.ai
+2. Upload SKILL.md and the entire references/ folder into the project Knowledge base
+3. Run contextual audits within that project
+```
+
+Best for agency workflows where each client gets its own project context.
+
 ---
 
 ## Prompt starters
 
 After installing, try any of these:
+
+<br>
 
 ```
 "Audit the IA of gipartnersofil.com"
@@ -89,13 +109,37 @@ ia-practitioner/
 
 ---
 
+## Live example
+
+The skill ships with a full audit of **[gipartnersofil.com](https://gipartnersofil.com)** — a multi-location GI medical group in Illinois.
+
+<br>
+
+Five violations caught immediately:
+
+- **Org-chart drift** — Locations organised by internal brand name, not geography
+- **Label failure** — `"Treatments"` used where patients arrive looking for symptoms
+- **Wayfinding gap** — `"Contact"` buried inside `About Us`
+- **Information hierarchy** — `"In The News"` given equal nav weight to clinical sections
+- **Missing consolidation** — No Patient Resources section despite high user need
+
+<br>
+
+The skill proposed a full nav restructure, wrote before/after comparisons, produced an IA pattern rationale, and generated a 9-section Word report — all in one conversation.
+
+→ See [`examples/GI_Partners_IA_Audit_Report.docx`](./examples/GI_Partners_IA_Audit_Report.docx)
+
+---
+
 ## What's new in v2.0
 
 This release incorporates **six additional books** on top of the Spencer foundation, adding material that was completely absent in v1.0.
 
+<br>
+
 | New capability | Source |
 |---|---|
-| Search systems (full chapter) | Morville & Rosenfeld |
+| Search systems — full chapter | Morville & Rosenfeld |
 | Controlled vocabularies, synonym rings, thesauri | Morville & Rosenfeld |
 | Faceted classification and guided navigation | Morville & Rosenfeld |
 | LATCH organisational framework | Wurman via Marquis |
@@ -116,6 +160,8 @@ This release incorporates **six additional books** on top of the Spencer foundat
 | Five cross-channel heuristics | Resmini & Rosati |
 | Internal vs external consistency | Resmini & Rosati |
 
+<br>
+
 See [CHANGELOG.md](./CHANGELOG.md) for full details.
 
 ---
@@ -124,10 +170,14 @@ See [CHANGELOG.md](./CHANGELOG.md) for full details.
 
 Built from the actual practitioner texts. Decision rules and anti-patterns extracted from source material — not summaries.
 
+<br>
+
 **Primary source**
 
 **A Practical Guide to Information Architecture** — Donna Spencer (UX Mastery, 2010)
 Spencer's People × Content × Context model, classification scheme selector, and labelling principles form the backbone of this skill.
+
+<br>
 
 **v2.0 additions**
 
@@ -142,25 +192,9 @@ Spencer's People × Content × Context model, classification scheme selector, an
 
 ---
 
-## Live example
-
-The skill ships with a full audit of **[gipartnersofil.com](https://gipartnersofil.com)** — a multi-location GI medical group in Illinois.
-
-Five violations caught immediately:
-
-- Locations organised by internal brand name, not geography
-- `"Treatments"` label used where patients arrive to find symptoms
-- `"Contact"` buried inside `About Us`
-- `"In The News"` given equal nav weight to clinical sections
-- No consolidated Patient Resources section
-
-The audit proposed a full nav restructure, wrote before/after comparisons, produced an IA pattern rationale, and generated a 9-section Word report — all in one conversation.
-
-→ See [`examples/GI_Partners_IA_Audit_Report.docx`](./examples/GI_Partners_IA_Audit_Report.docx)
-
----
-
 ## Useful tools that pair with this skill
+
+<br>
 
 | Tool | Use case |
 |---|---|
@@ -176,6 +210,8 @@ The audit proposed a full nav restructure, wrote before/after comparisons, produ
 
 ## Who this is for
 
+<br>
+
 - **Web designers and UX designers** working on site structure and navigation
 - **WordPress / Elementor developers** making navigation and menu decisions
 - **Healthcare and clinic websites** — medicalsuite.ai use case
@@ -186,6 +222,8 @@ The audit proposed a full nav restructure, wrote before/after comparisons, produ
 ---
 
 ## Further reading
+
+<br>
 
 | Book | Author | Why |
 |---|---|---|
@@ -204,20 +242,30 @@ The audit proposed a full nav restructure, wrote before/after comparisons, produ
 
 Contributions are welcome — but keep the skill tight. The core file loads on every conversation and must stay scannable.
 
+<br>
+
 > **Write for a working designer, not an academic. Decisions over definitions.
 > "Use X when Y" over "X is defined as…" — every addition should answer a real decision a designer faces.**
 
+<br>
+
 **What we want**
+
 - Sharper decision rules for scheme and pattern selection
 - Real-world examples — IA patterns applied to healthcare, e-commerce, SaaS, intranets
 - Labelling anti-patterns worth documenting
 - Practical notes from using Optimal Workshop, UXtweak, Maze, etc.
 - Anything factually wrong or misleading corrected
 
+<br>
+
 **What we don't want**
+
 - Pure theory without practical application
 - Long additions to `SKILL.md` — it loads on every conversation
 - Frameworks that haven't been tested in real projects
+
+<br>
 
 **How to contribute**
 
