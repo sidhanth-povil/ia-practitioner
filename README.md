@@ -6,14 +6,14 @@
 
 ### A Claude skill for professional Information Architecture
 
-Apply Donna Spencer's practitioner IA framework to any website, app, or content project — directly in conversation.
+Apply practitioner IA frameworks to any website, app, or content project — directly in conversation.
 
 <br>
 
-[![Version](https://img.shields.io/badge/version-1.0.0-c4a44a?style=flat-square)](https://github.com/sidhanth-povil/ia-practitioner/releases)
+[![Version](https://img.shields.io/badge/version-2.0.0-c4a44a?style=flat-square)](https://github.com/sidhanth-povil/ia-practitioner/releases)
 [![License](https://img.shields.io/badge/license-MIT-4a7a4a?style=flat-square)](./LICENSE)
 [![Built by](https://img.shields.io/badge/built_by-designsuite.ai-1a4a7a?style=flat-square)](https://designsuite.ai)
-[![Framework](https://img.shields.io/badge/framework-Donna_Spencer-6a5acd?style=flat-square)](#source-literature)
+[![Sources](https://img.shields.io/badge/sources-7_books-6a5acd?style=flat-square)](#source-literature)
 
 <br>
 
@@ -23,16 +23,19 @@ Apply Donna Spencer's practitioner IA framework to any website, app, or content 
 
 ## What this skill does
 
-Install once and Claude becomes a working IA consultant. It applies a rigorous framework built from the best practitioner literature — covering the full lifecycle from user research through navigation design, testing, and client deliverables.
+Install once and Claude becomes a working IA consultant. It applies a rigorous framework built from seven practitioner texts — covering the full lifecycle from user research through navigation design, search systems, taxonomy, testing, and client deliverables.
 
 | Capability | What Claude does |
 |---|---|
 | **Nav audits** | Audits any site's navigation against IA principles — flags org-chart drift, label failures, pattern mismatches |
 | **Classification** | Identifies which of the 8 classification schemes and 10 IA patterns best fit your content and users |
+| **Search systems** | Designs search architecture — zones, result presentation, autocomplete, faceted navigation, no-dead-ends policy |
+| **Vocabulary control** | Builds controlled vocabularies, synonym rings, authority files, and thesauri |
 | **Research planning** | Runs card sort and tree test sessions — writes scenarios, advises on tools, analyses results |
 | **Audit reports** | Generates client-ready `.docx` reports with before/after nav comparisons, issue cards, and roadmaps |
-| **Labelling** | Tests every label against user terminology from research; catches internal jargon and brand-speak |
-| **Sitemap creation** | Produces both conceptual and detailed sitemaps with implementation rationale |
+| **Labelling** | Tests every label against user terminology; catches internal jargon, audience-nav traps, junk drawers |
+| **Cross-channel IA** | Applies Resmini & Rosati's five heuristics for consistent experiences across devices and channels |
+| **Taxonomy design** | Documents controlled vocabularies, tagging systems, and faceted classification for CMS-driven sites |
 
 ---
 
@@ -62,6 +65,10 @@ After installing, try any of these:
 "My client's navigation feels wrong — how do I test it?"
 "Run an open card sort analysis on these 30 items"
 "What's wrong with using an audience-based nav as the primary scheme?"
+"Design a search system for a 10,000-page university site"
+"Build a controlled vocabulary for a healthcare clinic"
+"What are the cross-channel IA heuristics I should apply?"
+"How do I design faceted navigation for a product catalogue?"
 ```
 
 ---
@@ -72,13 +79,44 @@ After installing, try any of these:
 ia-practitioner/
 ├── SKILL.md                        ← Core — loaded on every relevant conversation
 └── references/
-    ├── classification-schemes.md   ← All 8 schemes with decision rules and traps
-    ├── ia-patterns.md              ← 10 IA patterns with a pattern selection guide
-    ├── user-analysis.md            ← Research methods, card sort analysis, mental models
-    └── navigation-design.md        ← Nav types, principles, testing, anti-patterns
+    ├── classification-schemes.md   ← All 8 schemes; LATCH framework; controlled vocabulary; thesauri
+    ├── ia-patterns.md              ← 10 IA patterns; cross-channel patterns; Glushko organising systems
+    ├── user-analysis.md            ← Research methods; card sort analysis; structural audits; diagrams
+    └── navigation-design.md        ← Nav types; search systems; wayfinding; faceted nav; anti-patterns
 ```
 
 `SKILL.md` loads on every relevant conversation — kept tight and scannable. Reference files are loaded on demand when the depth of a question requires them.
+
+---
+
+## What's new in v2.0
+
+This release incorporates **six additional books** on top of the Spencer foundation, adding material that was completely absent in v1.0.
+
+| New capability | Source |
+|---|---|
+| Search systems (full chapter) | Morville & Rosenfeld |
+| Controlled vocabularies, synonym rings, thesauri | Morville & Rosenfeld |
+| Faceted classification and guided navigation | Morville & Rosenfeld |
+| LATCH organisational framework | Wurman via Marquis |
+| Criteria matching process for categorisation | Marquis |
+| Four categorical considerations (user needs / business goals / current state / future) | Marquis |
+| Structural audit methodology with spreadsheet template | Marquis |
+| Labelling guidelines — clarity, specificity, inclusivity, consistency | Marquis |
+| Conway's Law warning | Marquis |
+| Folksonomy failure modes and controlled tagging | Marquis |
+| Ontology as distinct from vocabulary | Covert |
+| Nouns + verbs requirements model | Covert |
+| Scales of abstraction (object → ecosystem) | Covert |
+| Scanning, satisficing, muddling through | Krug |
+| First-click testing | Krug |
+| Organising systems framework vocabulary | Glushko |
+| Resource description and aboutness theory | Glushko |
+| Agent-type analysis (human vs algorithmic tagging) | Glushko |
+| Five cross-channel heuristics | Resmini & Rosati |
+| Internal vs external consistency | Resmini & Rosati |
+
+See [CHANGELOG.md](./CHANGELOG.md) for full details.
 
 ---
 
@@ -89,22 +127,18 @@ Built from the actual practitioner texts. Decision rules and anti-patterns extra
 **Primary source**
 
 **A Practical Guide to Information Architecture** — Donna Spencer (UX Mastery, 2010)
-The most applied practitioner IA book available. Spencer's People × Content × Context model, classification scheme selector, and labelling principles form the backbone of this skill.
+Spencer's People × Content × Context model, classification scheme selector, and labelling principles form the backbone of this skill.
 
-**Validated against**
+**v2.0 additions**
 
-| Book | Author | Why it's here |
+| Book | Author | What it added |
 |---|---|---|
-| *Information Architecture for the World Wide Web* | Morville & Rosenfeld | Foundational vocabulary and component model |
-| *How to Make Sense of Any Mess* | Abby Covert | Intent → message → language chain; language-first approach |
-| *Everyday Information Architecture* | Lisa Maria Marquis | Content-first IA; strongest on labelling and taxonomy |
-| *Don't Make Me Think* | Steve Krug | Usability lens on navigation; billboards not books |
-
-**Adjacent disciplines**
-
-- Card sorting — Optimal Workshop methodology documentation
-- Tree testing — Treejack research and first-click testing literature
-- Cognitive psychology — Hick's Law, Miller's Law, Zipf's principle of least effort applied to navigation design
+| *Information Architecture for the Web and Beyond* | Morville, Rosenfeld & Arango (4th ed.) | Search systems, controlled vocabularies, faceted classification, bottom-up IA |
+| *Everyday Information Architecture* | Lisa Maria Marquis | LATCH, criteria matching, structural audits, labelling guidelines, Conway's Law |
+| *How to Make Sense of Any Mess* | Abby Covert | Ontology, nouns + verbs model, scales of abstraction, "don't say" lists |
+| *Don't Make Me Think* | Steve Krug | Scanning/satisficing/muddling, first-click testing, conventions, visual hierarchy |
+| *The Discipline of Organizing* | Robert J. Glushko (4th ed.) | Organising systems framework, resource description, agent types, aboutness |
+| *Pervasive Information Architecture* | Resmini & Rosati | Five cross-channel heuristics, internal/external consistency, ubiquitous ecologies |
 
 ---
 
@@ -147,6 +181,7 @@ The audit proposed a full nav restructure, wrote before/after comparisons, produ
 - **Healthcare and clinic websites** — medicalsuite.ai use case
 - **Agency teams** preparing client-facing IA audit deliverables
 - **Content strategists** building taxonomy and labelling systems
+- **Product designers** working on search and discovery experiences
 
 ---
 
@@ -155,13 +190,13 @@ The audit proposed a full nav restructure, wrote before/after comparisons, produ
 | Book | Author | Why |
 |---|---|---|
 | *A Practical Guide to Information Architecture* | Donna Spencer | Best applied methodology — built this skill |
-| *Information Architecture for the Web and Beyond* | Morville & Rosenfeld | Foundational vocabulary and component model |
+| *Information Architecture for the Web and Beyond* | Morville, Rosenfeld & Arango | Foundational vocabulary; search systems; controlled vocabularies |
 | *How to Make Sense of Any Mess* | Abby Covert | Clearest intro to IA thinking; language-first approach |
-| *Everyday Information Architecture* | Lisa Maria Marquis | Content-first IA; strongest on labelling and taxonomy |
+| *Everyday Information Architecture* | Lisa Maria Marquis | Content-first IA; strongest on labelling, taxonomy, and audits |
 | *Don't Make Me Think* | Steve Krug | Usability lens on navigation; billboards not books |
-| *The Discipline of Organizing* | Robert J. Glushko (ed.) | Academic depth; bridges library science and HCI |
-| *Search Patterns* | Morville & Callender | Search as navigation; complements browse-first IA |
+| *The Discipline of Organizing* | Robert J. Glushko (ed.) | Academic depth; bridges library science + HCI |
 | *Pervasive Information Architecture* | Resmini & Rosati | Cross-channel IA across apps, devices, physical spaces |
+| *Search Patterns* | Morville & Callender | Search as navigation; complements browse-first IA |
 
 ---
 

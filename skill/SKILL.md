@@ -1,37 +1,33 @@
 ---
 name: ia-practitioner
 description: >
-  Apply Donna Spencer's practical Information Architecture framework to any
-  design project. Use this skill whenever Sidhanth (or any designer) is working
-  on site structure, navigation, content organisation, labelling, card sorting,
-  IA testing, sitemap creation, classification schemes, or any UX task that
-  involves deciding how to group, label, or connect content. Also trigger when
-  the user asks: "how should I structure this site", "what nav should I use",
-  "help me organise this content", "how do I label these categories", "should I
-  do card sorting", "how do I test my IA", "help me create a sitemap", "what
-  classification scheme should I use", or any variant. Apply even when the
-  question is phrased as a WordPress/Elementor design question — IA underpins
-  all navigation and menu decisions.
+  Apply practitioner Information Architecture frameworks to any design project.
+  Built from Spencer, Morville & Rosenfeld, Covert, Marquis, Krug, Glushko, and
+  Resmini & Rosati. Use whenever working on site structure, navigation, content
+  organisation, labelling, classification schemes, search systems, card sorting,
+  IA testing, sitemap creation, or any UX task involving how to group, label, or
+  connect content. Apply even when the question is phrased as a WordPress/Elementor
+  design question — IA underpins all navigation and menu decisions.
 ---
 
-# IA Practitioner — Donna Spencer Framework
+# IA Practitioner — Multi-Source Framework
 
-A practical guide to applying *A Practical Guide to Information Architecture*
-(Donna Spencer / UX Mastery) to real projects.
+Built from seven practitioner texts. See reference files for depth on specific topics.
 
 ---
 
 ## Core Model: People × Content × Context
+*(Morville & Rosenfeld / Spencer)*
 
 Every IA decision lives at the intersection of three things:
 
 | Dimension | What to understand |
 |---|---|
-| **People** | Tasks, mental models, terminology, knowledge level, where they use the site |
-| **Content** | What exists, what's needed, structure, format, length, accuracy |
+| **People** | Tasks, mental models, terminology, knowledge level, context of use |
+| **Content** | What exists, structure, format, volume, dynamism, metadata quality |
 | **Context** | Business goals, constraints, tech stack, stakeholders, org culture |
 
-Missing any one of these = guaranteed IA failure. Start here before touching any nav or sitemap.
+Missing any one of these = guaranteed IA failure.
 
 ---
 
@@ -40,8 +36,6 @@ Missing any one of these = guaranteed IA failure. Start here before touching any
 1. **Organise** content into groups that make sense to users (not to the org)
 2. **Describe** those groups with labels users recognise
 3. **Provide paths** for users to reach what they need
-
-Every deliverable (sitemap, nav, labels, metadata) serves one of these three jobs.
 
 ---
 
@@ -58,19 +52,35 @@ Every deliverable (sitemap, nav, labels, metadata) serves one of these three job
 
 Research + communication take more time than design. Never skip them.
 
-For **Agile projects**: focus on big-picture IA + detail for current sprint only.
-Use sticky notes / lo-fi artefacts; conversation > documentation.
-
 ---
 
 ## Understanding People
 
 ### What to learn
 - What tasks they need to do (not what they think they need)
-- Their terminology for things (critical — use their words, not yours)
+- Their **exact terminology** for things — this is the most valuable research output
 - What they already know (topic + technology)
-- Where and when they use the site (device, context, urgency)
+- Where and when they use the site
 - Their mental model of how things group together
+
+### Information-seeking behaviours *(Spencer / Marquis)*
+
+| Mode | Behaviour | IA support needed |
+|---|---|---|
+| **Known-item** | Knows exactly what they want, not where to find it | A-Z index, search, direct labelling |
+| **Exploratory** | Browsing, learning, doesn't know exactly what's there | Clear categories, related links, serendipity |
+| **Re-finding** | Looking for something previously found | Search, recent, bookmarks |
+| **"Don't know what I need"** | Exploratory but no starting question | Guided paths, progressive disclosure |
+
+Design for all four modes. Most IA is built only for exploratory seeking.
+
+### How users really behave *(Krug)*
+
+**Users scan, not read.** They look for words that match their task. Design for billboards at 60 mph, not novels.
+
+**Users satisfice.** They click the first link that looks plausible — not the best option. Every question mark on a page costs cognitive energy and erodes confidence.
+
+**Users muddle through.** They get things done with incomplete mental models. "Getting it" is better UX than "muddling through" — it's faster, more error-free, and builds return visits.
 
 ### Research methods — when to use each
 
@@ -84,51 +94,61 @@ Use sticky notes / lo-fi artefacts; conversation > documentation.
 | **Search logs** | What people call things; unmet needs |
 | **Existing data** | Fast start: emails, help-desk tickets, forums |
 
-Use at least **two methods**. Direct (interview/observation) reveals why. Indirect (analytics/search) reveals what.
-
-### The 5 Whys technique
-Start from something you know people want → ask "why do they need that?" → repeat until you hit "I don't know". That's your research question.
-
-### If you can't do research
-Write down what you already know. Describe users concretely. Bad decisions come from vague assumptions, not from lack of research tools.
-
-→ For deep analysis methods: see `references/user-analysis.md`
+Use at least two methods. Direct (interview/observation) reveals why. Indirect (analytics/search) reveals what.
 
 ---
 
 ## Understanding Content
 
-### Content audit steps
-1. Inventory everything (spreadsheet: title, URL, type, owner, last updated, analytics)
-2. Assess quality and accuracy
-3. Identify structured vs unstructured content
-4. Colour-code by usage data to reveal what's working
-5. Identify what can be deleted, what needs rewriting, what's missing
+### Content audit process *(Marquis)*
 
-### Structured vs unstructured
-- **Structured**: all items of a type share the same pieces (database model). Use when content will be generated automatically, displayed in multiple views, or managed at scale.
-- **Unstructured**: one-off pages. Fine for low-volume, static content.
+Distinguish: **audit** (the process) vs. **inventory** (the spreadsheet output).
 
-Only structure content when you'll actually use that structure (auto-generated lists, multiple views, filtering).
+Audit types that work best together:
+- **Scoping audit** — high-level page count, content types, structural health, quality sample
+- **Automated audit** — crawl tool output; parse for page distribution, word counts, readability trends
+- **Structural audit** — walk the site as a user; track hierarchy, crosslinks, inconsistencies in a spreadsheet
+
+Before designing, answer:
+1. How much content is on the site?
+2. What kind of content is it?
+3. How is it structured?
+4. How effective is it?
+5. How is it managed (and by whom)?
 
 ### Content planning — what to define per content type
 - Format (article, video, tool, PDF, FAQ)
-- Length (check longest + shortest examples)
+- Length range
 - Target audience
 - Tasks it supports
-- Accuracy / update frequency
+- Accuracy/update frequency
 - Structured fields (if applicable)
 
-### Content priorities
-Use one of: value vs cost matrix, scoring system (importance × freshness × availability × author speed), cyclical/seasonal schedule, or core-first release.
+### Structured vs unstructured
+- **Structured**: all items of a type share the same fields — use for database-pattern content
+- **Unstructured**: one-off pages — fine for static, low-volume content
 
-Content is the website. Involve authors from day one.
+Only structure content when you will actually use that structure.
+
+---
+
+## LATCH — Five Ways to Organise Anything *(Wurman via Marquis)*
+
+| Method | Use when |
+|---|---|
+| **Location** | Geography is the primary user mental model; users navigate by place |
+| **Alphabet** | Known-item lookup in large lists; indexes; dictionaries |
+| **Time** | News, events, history, social feeds; recency adds meaning |
+| **Category** | Most websites; flexible, robust, discovery-oriented |
+| **Hierarchy** | Ordering by value, weight, priority, or rank |
+
+LATCH is a starting framework, not a complete system. Category and Hierarchy overlap; ordering methods (L, A, T) differ from grouping methods (C, H). Real sites combine multiple LATCH methods.
 
 ---
 
 ## Classification Schemes
 
-Read `references/classification-schemes.md` for the full breakdown.
+→ Full decision rules in `references/classification-schemes.md`
 
 Quick selector:
 
@@ -136,24 +156,41 @@ Quick selector:
 |---|---|
 | **Hierarchical (subject/topic)** | General-purpose; most common |
 | **Task-based** | Users have clear, frequent tasks |
-| **Audience** | Clearly distinct user groups with very different needs |
+| **Audience** | Clearly distinct user groups — but use as **entry points**, not primary nav |
 | **Time** | News, events, history, sequential content |
 | **Alphabetical** | Known-item lookup; best as secondary scheme (A-Z index) |
-| **Geographical** | Content where location is a primary attribute AND users understand the geography |
+| **Geographical** | Location is primary attribute AND users know the geography |
 | **Format** | Secondary only — users think topic first, then format |
 | **Organisational** | Intranets where dept is genuinely meaningful to users (rare) |
 
-Rules:
-- Audiences rarely work as the **only** scheme — pair with subject
-- Geography only works if users know the boundaries you use
-- Format is almost always secondary, not primary
-- A-Z indexes are high-value secondary navigation — never underestimate them
+**Critical rule:** Audience-based navigation rarely works as the sole primary scheme. Users can't reliably self-identify, content overlaps between audiences, and it creates duplication. Use audience as **focused entry points** over a subject hierarchy instead.
+
+**Conway's Law warning *(Marquis)***: Organisations tend to build navigation that mirrors their org chart. Fight this — users don't care how internal teams are structured.
+
+---
+
+## Criteria Matching — How Categorisation Actually Works *(Marquis)*
+
+Categorising content is not arbitrary grouping — it is **criteria matching**:
+1. Define the criteria for the category (what belongs here and why)
+2. Assess each content item against that criteria
+
+The four factors that should shape category criteria:
+
+| Factor | What it means |
+|---|---|
+| **User needs** | What are users trying to do? Focus on actions/verbs, not audience labels |
+| **Business goals** | What story is the organisation trying to tell? The category structure IS part of the narrative |
+| **Current state** | What's in the inventory? Use audit insights; don't ignore existing equity |
+| **Future state** | What content will exist post-launch? What can the content team actually produce? |
+
+Categories without rationale are arbitrary. Arbitrary categories cause harm.
 
 ---
 
 ## IA Patterns
 
-Read `references/ia-patterns.md` for full pattern details + examples.
+→ Full pattern details in `references/ia-patterns.md`
 
 Quick reference:
 
@@ -176,30 +213,114 @@ Most real sites are **Hierarchy + Database**. Don't over-engineer.
 
 ## Labels and Language
 
-### What makes a good label
-- **Uses your users' exact terminology** (not internal jargon, not invented terms)
+### What makes a good label *(Spencer / Marquis / Covert)*
+- Uses your users' **exact terminology** — not internal jargon, not invented terms
 - Consistent throughout the site
-- Calls things by the correct name (boring is good)
-- As clear as possible — no cleverness, no brand-speak
+- **Clarity** — straightforward, familiar, free of ambiguity
+- **Specificity** — no catch-all "Resources" or "Information" buckets (junk drawers)
+- **Inclusivity** — won't alienate users from marginalised groups; consider who is excluded
+- **Consistency** — parallel structure in grouped labels (all gerunds, all nouns, etc.)
 
-### Getting label ideas
-1. User research transcripts — capture verbatim what users say
-2. Search logs — what terms do users type?
-3. Card sort labels — what did users write on the cards?
-4. Competitor sites (for language, not IA)
-5. Internal stakeholders — then test against users
+### Labelling guidelines *(Marquis)*
+- Test clarity: show users top-level labels, ask what they'd expect to find inside
+- Avoid first/second person possessive inconsistency ("About Us" + "My Account" = "us" vs "my")
+- Beware: "Moments", "Explore", "Discover" — creative labels require marketing to explain themselves
+- The clearest label is not always the most obvious first choice — push it further
 
-### Common labelling traps
-- Using internal/org terminology instead of user language
-- Trying to be creative or branded ("Our Solutions", "Explore")
-- Inconsistency across levels (same thing, two names)
-- Labels too broad ("Information", "Resources")
-- Labels too narrow (hiding sub-content)
+### Controlled vocabulary *(Covert / Morville)*
+A controlled vocabulary is an organised list of terms with canonical spellings, accepted synonyms, and defined scope.
 
-### Label testing
-- Show users top-level labels, ask what they'd expect to find inside
-- Use tree testing to find where users go wrong
-- Check search logs — searches on a site usually mean navigation failed
+Document:
+- Terms you DO say (and their authorised variants/spellings)
+- Terms you DON'T say (and why — historical baggage, internal jargon, confusion with user terms)
+- Homographs — words that mean different things in different contexts
+- Acronym expansions
+
+→ Full vocabulary and thesaurus guidance in `references/classification-schemes.md`
+
+### Ontology *(Covert)*
+When you decide that a word holds a specific meaning in a specific context, you are practising **ontology** — declaring meaning for your domain. Do this explicitly with stakeholders and users before designing with the language. Use sticky notes: write terms, arrange by relationship, test against user language.
+
+---
+
+## Search Systems *(Morville & Rosenfeld)*
+
+Search is a navigation system — not a substitute for good IA.
+
+### Does your product need search?
+
+Add search when:
+- Content volume makes browsing impractical
+- The site is fragmented (siloed content, distributed authorship)
+- Content is highly dynamic and can't be manually indexed
+- Users expect it (it's become a default convention)
+
+Don't add search as a band-aid for poor navigation. Fix the navigation first.
+
+### Search system design decisions
+
+**What to index:**
+- Search zones — subsets of content indexed separately (by topic, audience, content type, date)
+- Navigation pages vs destination pages — index destination pages, exclude nav pages from results
+- Content components — which fields within a document to make searchable
+
+**Result presentation:**
+- Show less for known-item searchers (just title + author)
+- Show more for exploratory searchers (summary, category, key metadata)
+- Always show: total results count, query restatement, ability to revise
+- Relevance ranking, date sorting, and popularity ranking are three different strategies — choose based on user need
+
+**No dead ends policy**: When search returns zero results, always offer:
+- A way to revise the search
+- Search tips
+- A browse path (sitemap/nav)
+- A human contact
+
+**Autocomplete/autosuggest**: Surfaces controlled vocabulary terms and query patterns — dramatically improves search quality and reduces zero-result failures.
+
+→ Full search design guidance in `references/navigation-design.md`
+
+---
+
+## Cross-Channel IA *(Resmini & Rosati)*
+
+Modern information exists across multiple channels, devices, and environments simultaneously. Design principles for pervasive IA:
+
+| Heuristic | What it means |
+|---|---|
+| **Place-making** | Help users know where they are across physical and digital spaces |
+| **Consistency** | Semantic structures should be recognisable across channels (mobile app, website, signage) — not identical, but coherent |
+| **Resilience** | The system should accommodate different information-seeking behaviours and contexts |
+| **Reduction** | Reduce cognitive load; apply Hick's Law — too much choice delays decision |
+| **Correlation** | Connect related content and services across channels; break down silos |
+
+**Internal consistency**: The IA serves its own context well.
+**External consistency**: The IA preserves its logic across different media and environments.
+
+Cross-channel IA does not mean "design the same thing for every channel." It means designing **semantic structures** that can be instantiated appropriately for each channel's constraints and affordances.
+
+---
+
+## Organising Systems Framework *(Glushko)*
+
+Glushko's framework provides a vocabulary for describing any organising system:
+
+**Core concepts:**
+- **Resource** — anything being organised (documents, products, people, physical objects, data)
+- **Collection** — a set of resources treated as a unit
+- **Organising principle** — the property or rule used to arrange resources (alphabetical, topical, by frequency of use)
+- **Agent** — who or what does the organising (human cataloguer, algorithm, user tagging, automated crawler)
+- **Interaction** — what users can do with the organised resources (find, browse, compare, filter, download)
+- **Interaction resource** — a trace of user behaviour that can itself become data (search logs, click patterns, ratings)
+
+**Key insight:** Physical resources can only be in one place at a time — they must choose a single organising principle. Digital resources can be organised in multiple ways simultaneously (the iTunes problem — content is freed from its container).
+
+**Organising properties:**
+- **Intrinsic** — properties inherent to the resource (title, date, format, size)
+- **Extrinsic** — properties assigned through description (subject tags, categories, ratings)
+- **Aboutness** — what a resource is about; requires intellectual effort to determine; the basis of subject classification
+
+**Colocation**: Putting all resources of a type together. The simplest organising principle; often the starting point for personal systems; insufficient at scale.
 
 ---
 
@@ -226,42 +347,55 @@ Show users the IA as a hierarchy. Give them a scenario (not using your labels). 
 **Preparation:**
 - Draft IA (can still be rough)
 - 8–12 realistic scenarios (avoid using label words in scenario text)
+- Describe the user's situation, not the object: "You've just found out you're having a baby. What are you entitled to?" — not "Find the maternity leave policy."
 - 5–8 participants minimum
-
-**Scenario writing rule:** describe the user's situation, not the object. "You need the maternity leave policy" → "You've just found out you're having a baby. What are you entitled to?"
-
-**Tools:** Optimal Workshop Treejack, C-inspector, or paper cards (write categories on index cards, walk through with users face to face).
 
 **When to change the IA:**
 - Consistent wrong choice → move the content there
 - Inconsistent choices → the label is ambiguous, rewrite it
 - Everyone goes backwards → the category above is misleading
 
+**Tools:** Optimal Workshop Treejack, UXtweak, or paper cards
+
 ### Card sorting
-**Open card sort** → users create their own groups from content cards. Use to discover mental models early.
+**Open card sort** → users create their own groups. Use to discover mental models early. Capture the words users write on group headers — this is your label vocabulary.
+
 **Closed card sort** → users sort into your predefined categories. Use to validate an existing IA.
 
-Tools: Optimal Workshop OptimalSort, or physical index cards.
+### First-click testing *(Krug)*
+Ask users: given this scenario, what's the first thing you'd click? Simple, fast, highly predictive — the first click strongly correlates with task success.
 
-Analyse for: clusters (what goes together), outliers (where people disagree), and — critically — the **language users wrote** on group headers.
+### Analytics signals that IA is failing
+- High search use (users can't find via nav)
+- High bounce rate from section landing pages
+- High back-button use from deep pages
+- Direct URL entry for buried content
+- Users arriving to wrong sections from search
 
 ---
 
-## Documenting and Communicating IA
+## Documenting IA
 
-### Two sitemap types
+### Sitemap types *(Marquis)*
 
-**Conceptual sitemap** — high-level, shapes + connectors, shows overall pattern. Use for team alignment early in the project. Don't share with clients alone — too abstract.
+| Format | Best for |
+|---|---|
+| **Box-and-arrow diagram** | Stakeholder presentations; high-level overview; smaller sites |
+| **Outline** | Completionist scenarios; every page at every level; text-heavy projects |
+| **Spreadsheet** | Migration planning; template mapping; page IDs; multi-column metadata |
 
-**Detailed sitemap** — every page, numbered, with templates noted. Can be a diagram (good for visual overview) or spreadsheet (better for large sites + project tracking + content migration).
+Distinguish: **parent-child relationships** (hierarchy levels) vs. **sibling relationships** (pages at the same level). Sitemaps capture these two; they do not capture every cross-link.
+
+Include in sitemap documentation:
+- Page IDs (numbered by hierarchy level: 1.0, 1.1, 1.2)
+- Differentiate single pages from dynamic collections (e.g., "[News articles]")
+- Rationale for structural decisions
+- What you decided NOT to do and why
 
 ### What to document beyond the sitemap
-- **Rationale**: why this structure, what each section contains, what you tried and rejected
-- **Maintenance guide**: rules for adding new content, what goes where, how to handle scale
-- **What you decided NOT to do** — this is as important as what you did. Document rejected ideas and why.
-
-### Cross-links
-Don't try to draw cross-links on sitemaps — too messy. Track them in the content document alongside the copy.
+- Why this structure, what each section contains, what was rejected and why
+- Maintenance guide: rules for adding new content, what goes where
+- Cross-links (track in content document, not on the sitemap)
 
 ---
 
@@ -283,6 +417,14 @@ Don't try to draw cross-links on sitemaps — too messy. Track them in the conte
 - [ ] Is the IA tested and stable?
 - [ ] Do I have user terminology confirmed?
 - [ ] Do I know the IA pattern I'm using?
+- [ ] Have I identified all navigation structure types (main, secondary, utility, search, social, footer)?
+
+### Labelling review
+- [ ] Does every label use user language, not internal jargon?
+- [ ] Is the labelling parallel in structure across grouped items?
+- [ ] Is there a controlled vocabulary documenting authorised terms?
+- [ ] Are there any junk-drawer catch-all categories?
+- [ ] Have labels been tested with tree testing or first-click?
 
 ---
 
@@ -290,7 +432,7 @@ Don't try to draw cross-links on sitemaps — too messy. Track them in the conte
 
 | File | When to read |
 |---|---|
-| `references/classification-schemes.md` | Choosing how to organise content; all 8 schemes with tips |
+| `references/classification-schemes.md` | Choosing how to organise content; all 8 schemes; LATCH detail; controlled vocabulary and thesauri |
 | `references/ia-patterns.md` | Choosing a structural pattern; all combined patterns with examples |
-| `references/user-analysis.md` | Deep analysis methods: affinity mapping, mental models, personas |
-| `references/navigation-design.md` | Navigation types, design patterns, testing nav |
+| `references/user-analysis.md` | Deep analysis methods: affinity mapping, mental models, personas, card sort analysis |
+| `references/navigation-design.md` | Navigation types, design principles, search systems, wayfinding, anti-patterns |

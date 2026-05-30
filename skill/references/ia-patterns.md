@@ -1,6 +1,6 @@
 # IA Patterns — Full Reference
 
-Source: Donna Spencer, *A Practical Guide to Information Architecture*
+Sources: Spencer, Morville & Rosenfeld, Marquis, Glushko
 
 ---
 
@@ -21,6 +21,7 @@ Content organised into parent-child relationships (tree structure).
 - Test with tree testing to identify where users go wrong
 - Every item should have one clear home — if it fits two places, it's a labelling or grouping problem
 - Breadcrumbs are essential for hierarchy navigation
+- Parent-child and sibling relationships are what sitemaps capture — not every possible cross-link
 
 ---
 
@@ -37,6 +38,7 @@ Content items share a consistent structure (same fields/attributes).
 - Only collect metadata fields you will actually use
 - Index pages (listing views) are critical — they're where users make decisions
 - Pair with a hierarchy for navigation into the database section
+- Gallery pages (product/article listings) are the hardest-working pages — they need excellent labelling, imagery, and filtering
 
 ---
 
@@ -52,6 +54,7 @@ Content pieces connected by associative links, no master hierarchy.
 - Good starting structure for knowledge that grows organically
 - Plan to reorganise once the content is known
 - Add entry pages and A-Z indexes as anchors
+- Tags are the most common digital implementation of hypertext links across content
 
 ---
 
@@ -85,14 +88,16 @@ A hierarchy over a database — typically 2-3 levels of category hierarchy leadi
 
 **Common in:** E-commerce, product catalogues, large article libraries.
 
-**Jared Spool's three page types:**
+**Three page types (Jared Spool):**
 - **Store pages** → top-level departments
 - **Department pages** → sub-categories
-- **Gallery pages** → direct access to individual items (hardest-working pages on the site — this is where users decide whether to go deeper)
+- **Gallery pages** → direct access to individual items
+
+**Gallery pages are the hardest-working pages on the site** — this is where users decide whether to go deeper. They need excellent labelling, imagery, scanning affordances, and filtering.
 
 **Tips:**
-- Gallery pages need excellent labelling, imagery, and filtering
 - 3 levels max before reaching items — deeper than that and users get lost
+- Gallery page design determines conversion rate more than any other page type
 
 ---
 
@@ -144,14 +149,18 @@ Content tagged with keywords; tags provide access pathways.
 **Suits:** Large, diverse content sets where users don't know exactly what they're looking for, or want to explore related content.
 
 **Key question:** Who tags, and how consistently?
-- **Author tagging** — fast but inconsistent (authors use different terms)
+- **Author tagging** — fast but inconsistent (authors use different terms, create near-duplicate tags)
 - **Reader tagging** (folksonomies) — reflects user language but noisy
 - **Controlled vocabulary tagging** — most consistent, requires governance overhead
+
+**The folksonomy problem *(Marquis)*:**
+Free-range tagging creates bloated, inconsistent taxonomic messes. The Toast had 8,182 unique tags — 6,152 applied to only one post. More than 400 tags were unused. Cleaning up uncontrolled tags is tedious and thankless. Better to establish a controlled tag vocabulary upfront, with a clear process for adding and retiring terms.
 
 **Tips:**
 - Tag cloud navigation works for exploration, not known-item lookup
 - Pair with search for known-item tasks
 - Define a controlled vocabulary if you need consistency across authors
+- Combine funny/creative tags with functional tags in separate fields (The Toast solution)
 
 ---
 
@@ -179,3 +188,53 @@ Ask these questions:
 
 6. **Is this primarily transactional (users have tasks to complete)?**
    - Yes → consider hub + spoke or task-based entry points
+
+---
+
+## Cross-Channel Patterns *(Resmini & Rosati)*
+
+When content exists across multiple channels (website, app, physical signage, voice interface), the IA pattern must operate at two levels:
+
+**Within-channel structure:** The organisation of content within a single channel.
+**Cross-channel architecture:** The semantic structures that remain consistent across all channels — not identical implementations, but coherent mental models.
+
+**Five cross-channel heuristics:**
+
+| Heuristic | What it means for pattern choice |
+|---|---|
+| **Place-making** | Users should know where they are regardless of which channel they're using |
+| **Consistency** | Labels, categories, and navigation structures should be recognisable across channels |
+| **Resilience** | The IA should support different seeking behaviours; one rigid pattern won't serve all users |
+| **Reduction** | Hick's Law applies across channels: don't present everything everywhere — prioritise ruthlessly |
+| **Correlation** | Connect related content across channels; break information silos |
+
+**Practical implication:** Design the IA at the semantic level first (what categories exist, what they're called, how they relate), then implement appropriately for each channel. A navigation structure that works in a desktop browser should function differently on a 5-inch touchscreen — but users should feel like they're navigating the same place.
+
+---
+
+## Glushko's Organising System Framework
+
+When selecting an IA pattern, Glushko's framework adds useful precision:
+
+**What is being organised?** (the resource type)
+- Physical vs digital resources
+- Homogeneous (all same type) vs heterogeneous (mixed types)
+- High aboutness complexity (requires intellectual classification) vs easily sortable
+
+**Why is it being organised?** (the purpose)
+- Discovery (browsing) → favour hierarchical or tagged patterns
+- Known-item retrieval → favour search + A-Z
+- Learning/research → favour database + faceted navigation
+- Transaction → favour linear or hub & spoke
+
+**How much is it being organised?** (granularity)
+- Coarse (section-level grouping only) → simple hierarchy
+- Fine (field-level metadata on every item) → full database/faceted pattern
+
+**Who organises it?** (the agent)
+- Human curators → controlled vocabulary, high consistency
+- Authors self-tagging → folksonomies, managed controlled vocabulary
+- Automated algorithms → statistical classification, requires testing against mental models
+- User tagging (community) → hybrid; works when community is engaged and guidelines exist (Ravelry)
+
+The organising agent determines how consistent the system will be in practice, independent of how well-designed the pattern is on paper.
